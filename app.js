@@ -27,7 +27,7 @@ app.use(
 app.use(compression());
 
 const accessLogStream = fs.createWriteStream(
-  path.join(__dirname, "access.log"),
+  path.join(__dirname, "access_dir.log"),
   { flags: "a" }
 );
 app.use(morgan("combined", { stream: accessLogStream }));
