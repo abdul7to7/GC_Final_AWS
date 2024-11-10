@@ -58,8 +58,8 @@ app.use("/gc", authVerifyToken, groupRoutes);
 app.use("/friend", authVerifyToken, friendRoutes);
 app.use("/file", fileRoutes);
 
-app.use("/", (req, res) => {
-  res.status(404).send("Page not found");
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", req.url));
 });
 
 User.hasMany(Message, {
