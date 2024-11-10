@@ -1,4 +1,4 @@
-const server = "http://localhost:3000";
+const server = "http://13.233.144.241:3000";
 
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
   e.preventDefault();
