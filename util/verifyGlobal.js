@@ -4,13 +4,13 @@ const verifyGlobal = async () => {
   const global = await Group.findOne({
     where: {
       id: 1,
-      groupName: "Global",
+      groupName: "global",
     },
   });
   if (!global) {
     await Group.create({
       id: 1,
-      groupName: "Global",
+      groupName: "global",
     });
   }
 };

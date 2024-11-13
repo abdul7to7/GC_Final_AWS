@@ -130,7 +130,7 @@ document
     const newGroupName = document.getElementById("new_group_name").value;
     await postCreateGroup(newGroupName);
     localStorage.setItem("receiverId", 1);
-    localStorage.setItem("receiverName", "Global");
+    localStorage.setItem("receiverName", "global");
     localStorage.setItem("isReceiverGroup", 1);
     window.location.reload(true);
   });
@@ -166,7 +166,7 @@ document
     const select = document.getElementById("delete_group_section_select");
     await deleteGroup(select.value);
     localStorage.setItem("receiverId", 1);
-    localStorage.setItem("receiverName", "Global");
+    localStorage.setItem("receiverName", "global");
     localStorage.setItem("isReceiverGroup", 1);
     window.location.reload();
   });
@@ -270,7 +270,7 @@ document
       while (select_group.childNodes > 1) select_group.removeLastChild();
       userGroups
         .filter((group) => {
-          return group.groupName != "Global";
+          return group.groupName != "global";
         })
         .forEach((group) => {
           const textNode = document.createTextNode(group.groupName);
@@ -298,7 +298,7 @@ document
     await addFriendToGroup(select_group.value, select_friend.value);
 
     localStorage.setItem("receiverId", 1);
-    localStorage.setItem("receiverName", "Global");
+    localStorage.setItem("receiverName", "global");
     localStorage.setItem("isReceiverGroup", 1);
     window.location.reload(true);
   });
@@ -315,7 +315,7 @@ document
     // await deleteGroup(select_group.value);
     await removeUserToGroup(select_group.value, select_friend.value);
     localStorage.setItem("receiverId", 1);
-    localStorage.setItem("receiverName", "Global");
+    localStorage.setItem("receiverName", "global");
     localStorage.setItem("isReceiverGroup", 1);
     window.location.reload(true);
   });
@@ -328,7 +328,7 @@ document
     );
     await leaveGroup(select_group.value);
     localStorage.setItem("receiverId", 1);
-    localStorage.setItem("receiverName", "Global");
+    localStorage.setItem("receiverName", "global");
     localStorage.setItem("isReceiverGroup", 1);
     window.location.reload(true);
   });
