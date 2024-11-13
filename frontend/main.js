@@ -729,7 +729,12 @@ const uploadFile = async (file, token, receiverId, isReceiverGroup) => {
       return;
     }
     const response = await fetch(
-      `${server}/file/getuploadurl?fileName=${file.name}&fileType=${file.type}`
+      `${server}/file/getuploadurl?fileName=${file.name}&fileType=${file.type}`,
+      {
+        headers: {
+          token: token,
+        },
+      }
     );
     const { url, fileKey } = await response.json();
 
@@ -737,7 +742,6 @@ const uploadFile = async (file, token, receiverId, isReceiverGroup) => {
       method: "PUT",
       headers: {
         "Content-Type": file.type,
-        token: token,
       },
       body: file,
     });
