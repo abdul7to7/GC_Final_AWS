@@ -219,14 +219,14 @@ document
         "add_friend_to_group_section_select_group"
       );
       while (select_group.options.length > 1)
-        select_friend.remove(select_friend.options.length - 1);
-      // select_group.selectedIndex = 0;
+        select_group.remove(select_group.options.length - 1);
+      select_group.selectedIndex = 0;
       const select_friend = document.getElementById(
         "add_friend_to_group_section_select_friend"
       );
       while (select_friend.options.length > 1)
         select_friend.remove(select_friend.options.length - 1);
-      // select_friend.selectedIndex = 0;
+      select_friend.selectedIndex = 0;
     }
   });
 
@@ -280,13 +280,13 @@ document
       );
       while (select_group.options.length > 1)
         select_group.remove(select_group.options.length - 1);
-      // select_group.selectedIndex = 0;
+      select_group.selectedIndex = 0;
       const select_friend = document.getElementById(
         "remove_friend_to_group_section_select_friend"
       );
       while (select_friend.options.length > 1)
         select_friend.remove(select_friend.options.length - 1);
-      // select_friend.selectedIndex = 0;
+      select_friend.selectedIndex = 0;
     }
   });
 
