@@ -127,12 +127,20 @@ document
   .getElementById("create_group_btn")
   .addEventListener("click", async (e) => {
     e.preventDefault();
+    const createGroupButton = e.target;
+    createGroupButton.disabled = true;
     const newGroupName = document.getElementById("new_group_name").value;
-    await postCreateGroup(newGroupName);
-    localStorage.setItem("receiverId", 1);
-    localStorage.setItem("receiverName", "global");
-    localStorage.setItem("isReceiverGroup", 1);
-    window.location.reload(true);
+    try {
+      await postCreateGroup(newGroupName);
+      localStorage.setItem("receiverId", 1);
+      localStorage.setItem("receiverName", "global");
+      localStorage.setItem("isReceiverGroup", 1);
+      window.location.reload(true);
+    } catch (error) {
+      console.error("Error creating group:", error);
+    } finally {
+      createGroupButton.disabled = false;
+    }
   });
 
 document
