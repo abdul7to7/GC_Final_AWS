@@ -256,23 +256,6 @@ document
           option.appendChild(textNode);
           select_group.appendChild(option);
         });
-      select_group.addEventListener("change", async () => {
-        const select_friend = document.getElementById(
-          "remove_friend_to_group_section_select_friend"
-        );
-        while (select_friend.options.length > 1)
-          select_friend.remove(select_friend.options.length - 1);
-        const thisGroupUsers = await getGroupMembers(select_group.value);
-
-        if (thisGroupUsers.users.length == 0) return;
-        thisGroupUsers.users.forEach((user) => {
-          const textNode = document.createTextNode(user.username);
-          const option = document.createElement("option");
-          option.value = user.id;
-          option.appendChild(textNode);
-          select_friend.appendChild(option);
-        });
-      });
     } else {
       removeFriendToGroupSection.style.display = "none";
       const select_group = document.getElementById(
@@ -288,6 +271,29 @@ document
         select_friend.remove(select_friend.options.length - 1);
       select_friend.selectedIndex = 0;
     }
+  });
+
+document
+  .getElementById("remove_friend_to_group_section_select_group")
+  .addEventListener("change", async () => {
+    const select_group = document.getElementById(
+      "remove_friend_to_group_section_select_group"
+    );
+    const select_friend = document.getElementById(
+      "remove_friend_to_group_section_select_friend"
+    );
+    while (select_friend.options.length > 1)
+      select_friend.remove(select_friend.options.length - 1);
+    const thisGroupUsers = await getGroupMembers(select_group.value);
+
+    if (thisGroupUsers.users.length == 0) return;
+    thisGroupUsers.users.forEach((user) => {
+      const textNode = document.createTextNode(user.username);
+      const option = document.createElement("option");
+      option.value = user.id;
+      option.appendChild(textNode);
+      select_friend.appendChild(option);
+    });
   });
 
 document
