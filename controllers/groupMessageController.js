@@ -1,3 +1,4 @@
+const GroupMembers = require("../models/groupMembersModel");
 const GroupMessage = require("../models/groupMessageModel");
 const User = require("../models/userModel");
 const { getBatchDownloadUrls } = require("./fileControllers");
@@ -47,6 +48,15 @@ exports.postGroupMessage = async ({
   fileKey,
 }) => {
   try {
+    const isMember = await GroupMembers.findOne({
+      where: {
+        userId: userId,
+        groupId: groupId,
+      },
+    });
+    if (!isMember) {
+      return { sucess: false, error: `You are not a member` };
+    }
     const msg = await GroupMessage.create({
       groupId: groupId,
       userId: userId,
