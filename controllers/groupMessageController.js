@@ -55,7 +55,11 @@ exports.postGroupMessage = async ({
       },
     });
     if (!isMember) {
-      return { sucess: false, error: `You are not a member` };
+      return {
+        success: false,
+        error: `You are not a member`,
+        notAMember: true,
+      };
     }
     const msg = await GroupMessage.create({
       groupId: groupId,

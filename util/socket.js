@@ -112,9 +112,16 @@ module.exports = (io) => {
             fileKey,
           });
           if (!res.success)
-            return socket
-              .to(groupId)
-              .emit("error", { message: "Failed to send group message." });
+            if (res.notAMember) {
+              socket.to(groupId).emit("error", {
+                message: "You have been removed from this group.",
+              });
+              socket.leave(groupId);
+              return;
+            }
+          return socket
+            .to(groupId)
+            .emit("error", { message: "Failed to send group message." });
 
           let url;
           if (isFile) {
