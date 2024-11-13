@@ -143,7 +143,7 @@ document
     if (deleteGroupSection.style.display == "none") {
       deleteGroupSection.style.display = "block";
       const select = document.getElementById("delete_group_section_select");
-      while (select.childNodes.length > 1) select.removeLastChild();
+      while (select.childNodes.length > 1) select.removeChild(select.lastChild);
       userGroups
         .filter((group) => {
           return group.group_member.isAdmin;
@@ -158,7 +158,7 @@ document
     } else {
       deleteGroupSection.style.display = "none";
       const select = document.getElementById("delete_group_section_select");
-      while (select.childNodes.length > 1) select.removeLastChild();
+      while (select.childNodes.length > 1) select.removeChild(select.lastChild);
       select.selectedIndex = 0;
     }
   });
@@ -186,7 +186,8 @@ document
       const select_group = document.getElementById(
         "add_friend_to_group_section_select_group"
       );
-      while (select_group.childNodes.length > 1) select_group.removeLastChild();
+      while (select_group.childNodes.length > 1)
+        select_group.removeChild(select_group.lastChild);
       userGroups
         .filter((group) => {
           return group.group_member.isAdmin;
@@ -202,7 +203,7 @@ document
         "add_friend_to_group_section_select_friend"
       );
       while (select_friend.childNodes.length > 1)
-        select_friend.removeLastChild();
+        select_friend.removeChild(select_friend.lastChild);
       userFriends.forEach((friend) => {
         const textNode = document.createTextNode(friend.friendDetails.username);
         const option = document.createElement("option");
@@ -216,13 +217,13 @@ document
         "add_friend_to_group_section_select_group"
       );
       while (select_group.childNodes.length > 1)
-        select_friend.removeLastChild();
+        select_friend.removeChild(select_friend.lastChild);
       select_group.selectedIndex = 0;
       const select_friend = document.getElementById(
         "add_friend_to_group_section_select_friend"
       );
       while (select_friend.childNodes.length > 1)
-        select_friend.removeLastChild();
+        select_friend.removeChild(select_friend.lastChild);
       select_friend.selectedIndex = 0;
     }
   });
@@ -239,7 +240,8 @@ document
       const select_group = document.getElementById(
         "remove_friend_to_group_section_select_group"
       );
-      while (select_group.childNodes.length > 1) select_group.removeLastChild();
+      while (select_group.childNodes.length > 1)
+        select_group.removeChild(select_group.lastChild);
 
       userGroups
         .filter((group) => {
@@ -257,7 +259,7 @@ document
           "remove_friend_to_group_section_select_friend"
         );
         while (select_friend.childNodes.length > 1)
-          select_friend.removeLastChild();
+          select_friend.removeChild(select_friend.lastChild);
         const thisGroupUsers = await getGroupMembers(select_group.value);
 
         if (thisGroupUsers.users.length == 0) return;
@@ -275,13 +277,13 @@ document
         "remove_friend_to_group_section_select_group"
       );
       while (select_group.childNodes.length > 1)
-        select_friend.removeLastChild();
+        select_friend.removeChild(select_friend.lastChild);
       select_group.selectedIndex = 0;
       const select_friend = document.getElementById(
         "remove_friend_to_group_section_select_friend"
       );
       while (select_friend.childNodes.length > 1)
-        select_friend.removeLastChild();
+        select_friend.removeChild(select_friend.lastChild);
       select_friend.selectedIndex = 0;
     }
   });
@@ -296,7 +298,8 @@ document
       const select_group = document.getElementById(
         "leave_group_section_select_group"
       );
-      while (select_group.childNodes.length > 1) select_group.removeLastChild();
+      while (select_group.childNodes.length > 1)
+        select_group.removeChild(select_group.lastChild);
       userGroups
         .filter((group) => {
           return group.groupName != "global";
@@ -313,7 +316,8 @@ document
       const select_group = document.getElementById(
         "leave_group_section_select_group"
       );
-      while (select_group.childNodes.length > 1) select_group.removeLastChild();
+      while (select_group.childNodes.length > 1)
+        select_group.removeChild(select_group.lastChild);
       select_group.selectedIndex = 0;
     }
   });
