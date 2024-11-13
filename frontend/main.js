@@ -55,6 +55,7 @@ document
     if (file) {
       await uploadFile(file, token, receiverId, isReceiverGroup);
       addNewMessageToUI({ message: file.name, sender: userId, url: "none" });
+      document.getElementById("input_message_file").value = "";
     }
     if (!message || message == "") {
       return;
@@ -77,7 +78,6 @@ document
       });
     }
     document.getElementById("input_message").value = "";
-    document.getElementById("input_message_file").value = "";
   });
 
 document
