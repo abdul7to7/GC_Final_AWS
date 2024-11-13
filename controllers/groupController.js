@@ -125,13 +125,13 @@ exports.removeMemberFromGroup = async (req, res, next) => {
         message: "access denied",
       });
     }
-    const group = await GroupMembers.findOne({
+    const groupMember = await GroupMembers.findOne({
       where: {
         userId: req.params.userId,
         groupId: req.params.groupId,
       },
     });
-    if (!group.isAdmin) {
+    if (!groupMember.isAdmin) {
       return res
         .status(400)
         .json({ success: false, message: `you are not admin` });

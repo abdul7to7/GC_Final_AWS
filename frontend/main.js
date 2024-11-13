@@ -113,7 +113,7 @@ document
 
 document
   .getElementById("create_group_section_btn")
-  .addEventListener("click", (e) => {
+  .addEventListener("click", async (e) => {
     e.preventDefault();
     const createGroupSection = document.getElementById("create_group_section");
     if (createGroupSection.style.display == "none") {
@@ -173,7 +173,7 @@ document
 
 document
   .getElementById("add_friend_to_group_section_btn")
-  .addEventListener("click", (e) => {
+  .addEventListener("click", async (e) => {
     e.preventDefault();
     const addFriendToGroupSection = document.getElementById(
       "add_friend_to_group_section"
@@ -213,7 +213,7 @@ document
 
 document
   .getElementById("remove_friend_to_group_section_btn")
-  .addEventListener("click", (e) => {
+  .addEventListener("click", async (e) => {
     e.preventDefault();
     const removeFriendToGroupSection = document.getElementById(
       "remove_friend_to_group_section"
@@ -259,7 +259,7 @@ document
 
 document
   .getElementById("leave_group_section_btn")
-  .addEventListener("click", (e) => {
+  .addEventListener("click", async (e) => {
     e.preventDefault();
     const leaveGroupSection = document.getElementById("leave_group_section");
     if (leaveGroupSection.style.display == "none") {
