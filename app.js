@@ -39,6 +39,7 @@ const Group = require("./models/groupModel");
 const GroupMembers = require("./models/groupMembersModel");
 const GroupMessage = require("./models/groupMessageModel");
 const Message = require("./models/messageModel");
+const Friend = require("./models/friendModel");
 
 const authRoutes = require("./routes/authRoutes");
 const groupRoutes = require("./routes/groupRoutes");
@@ -48,7 +49,6 @@ const friendRoutes = require("./routes/friendRoutes");
 const fileRoutes = require("./routes/fileRoutes");
 
 const authVerifyToken = require("./middlewres/authVerifyToken");
-const Friend = require("./models/friendModel");
 const verifyGlobal = require("./util/verifyGlobal");
 
 app.use("/auth", authRoutes);
@@ -56,7 +56,7 @@ app.use("/user", authVerifyToken, userRoutes);
 app.use("/dm", authVerifyToken, msgRoutes);
 app.use("/gc", authVerifyToken, groupRoutes);
 app.use("/friend", authVerifyToken, friendRoutes);
-app.use("/file", fileRoutes);
+app.use("/file", authVerifyToken, fileRoutes);
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend", req.url));

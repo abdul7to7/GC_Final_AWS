@@ -52,32 +52,31 @@ document
     const fileInput = document.getElementById("input_message_file");
     const file = fileInput.files[0];
 
+    if (message && message != "") {
+      addNewMessageToUI({ message, sender: userId });
+
+      if (isReceiverGroup) {
+        socket.emit("sendGroupMessage", {
+          groupId: receiverId,
+          token,
+          content: message,
+          isFile: false,
+        });
+      } else {
+        socket.emit("sendPrivateMessage", {
+          content: message,
+          token,
+          receiverId,
+          isFile: false,
+        });
+      }
+      document.getElementById("input_message").value = "";
+    }
     if (file) {
       await uploadFile(file, token, receiverId, isReceiverGroup);
       addNewMessageToUI({ message: file.name, sender: userId, url: "none" });
       document.getElementById("input_message_file").value = "";
     }
-    if (!message || message == "") {
-      return;
-    }
-    addNewMessageToUI({ message, sender: userId });
-
-    if (isReceiverGroup) {
-      socket.emit("sendGroupMessage", {
-        groupId: receiverId,
-        token,
-        content: message,
-        isFile: false,
-      });
-    } else {
-      socket.emit("sendPrivateMessage", {
-        content: message,
-        token,
-        receiverId,
-        isFile: false,
-      });
-    }
-    document.getElementById("input_message").value = "";
   });
 
 document
@@ -738,6 +737,7 @@ const uploadFile = async (file, token, receiverId, isReceiverGroup) => {
       method: "PUT",
       headers: {
         "Content-Type": file.type,
+        token: token,
       },
       body: file,
     });
