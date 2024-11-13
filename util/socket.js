@@ -111,7 +111,7 @@ module.exports = (io) => {
             isFile,
             fileKey,
           });
-          if (!res.success)
+          if (!res.success) {
             if (res.notAMember) {
               socket.to(groupId).emit("error", {
                 message: "You have been removed from this group.",
@@ -119,10 +119,10 @@ module.exports = (io) => {
               socket.leave(groupId);
               return;
             }
-          return socket
-            .to(groupId)
-            .emit("error", { message: "Failed to send group message." });
-
+            return socket
+              .to(groupId)
+              .emit("error", { message: "Failed to send group message." });
+          }
           let url;
           if (isFile) {
             url = await getDownloadUrl({ fileKey });
