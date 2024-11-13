@@ -208,12 +208,16 @@ document
       });
     } else {
       addFriendToGroupSection.style.display = "none";
-      document.getElementById(
+      const select_group = document.getElementById(
         "add_friend_to_group_section_select_group"
-      ).selectedIndex = 0;
-      document.getElementById(
+      );
+      while (select_group.childNodes > 1) select_friend.removeLastChild();
+      select_group.selectedIndex = 0;
+      const select_friend = document.getElementById(
         "add_friend_to_group_section_select_friend"
-      ).selectedIndex = 0;
+      );
+      while (select_friend.childNodes > 1) select_friend.removeLastChild();
+      select_friend.selectedIndex = 0;
     }
   });
 
@@ -260,12 +264,16 @@ document
       });
     } else {
       removeFriendToGroupSection.style.display = "none";
-      document.getElementById(
+      const select_group = document.getElementById(
         "remove_friend_to_group_section_select_group"
-      ).selectedIndex = 0;
-      document.getElementById(
-        "remove_friend_to_group_section_select_group"
-      ).selectedIndex = 0;
+      );
+      while (select_group.childNodes > 1) select_friend.removeLastChild();
+      select_group.selectedIndex = 0;
+      const select_friend = document.getElementById(
+        "remove_friend_to_group_section_select_friend"
+      );
+      while (select_friend.childNodes > 1) select_friend.removeLastChild();
+      select_friend.selectedIndex = 0;
     }
   });
 
