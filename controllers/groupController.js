@@ -142,6 +142,12 @@ exports.removeMemberFromGroup = async (req, res, next) => {
         groupId: req.params.groupId,
       },
     });
+    const socketServer = req.app.get("socketServer");
+
+    socketServer.to(req.params.userId).emit("removedFromGroup", {
+      groupId: req.params.groupId,
+    });
+
     return res.json({ success: true });
   } catch (e) {
     return res

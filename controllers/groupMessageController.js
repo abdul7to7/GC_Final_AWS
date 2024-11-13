@@ -5,12 +5,14 @@ const { getBatchDownloadUrls } = require("./fileControllers");
 
 exports.getPrevGroupMessage = async (req, res) => {
   try {
+    //note: -first check if they are group members
+
     let msgs = await GroupMessage.findAll({
       where: { groupId: req.params.groupId },
       include: [
         {
           model: User,
-          attributes: ["id", "username"], // Specify attributes to include from User model
+          attributes: ["id", "username"],
         },
       ],
       attributes: {

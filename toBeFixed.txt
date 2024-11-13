@@ -1,0 +1,3 @@
+user able to see messages after removing by admin
+fix getprevchat, check if user is a member of group,and friendship between two user
+make everything with socket managing group and adding friend also

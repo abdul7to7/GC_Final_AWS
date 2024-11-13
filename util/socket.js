@@ -113,7 +113,7 @@ module.exports = (io) => {
           });
           if (!res.success) {
             if (res.notAMember) {
-              socket.to(groupId).emit("error", {
+              socket.emit("error", {
                 message: "You have been removed from this group.",
               });
               socket.leave(groupId);
@@ -141,6 +141,14 @@ module.exports = (io) => {
         }
       }
     );
+
+    // socket.on("removedFromGroup", (data) => {
+    //   const { groupId } = data;
+    //   socket.leave(groupId);
+    //   socket.emit("error", {
+    //     message: "You have been removed from the group.",
+    //   });
+    // });
 
     socket.on("disconnect", () => {
       console.log(`${socket.id} disconnected`);

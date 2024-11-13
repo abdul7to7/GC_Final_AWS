@@ -12,7 +12,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     // origin: ["https://s-group-chat.onrender.com", "http://127.0.0.1:5500"],
-    origin: "*",
+    origin: ["http://127.0.0.1:5500"],
   },
 });
 app.use(express.json());
