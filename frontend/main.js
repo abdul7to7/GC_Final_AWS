@@ -77,6 +77,7 @@ document
       });
     }
     document.getElementById("input_message").value = "";
+    document.getElementById("input_message_file").value = "";
   });
 
 document
