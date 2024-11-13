@@ -638,7 +638,7 @@ function addAllUsersToUI(allUsers) {
 
 function addPrevChatToUI(chat) {
   const chatList = document.getElementById("chat_list");
-  while (chatList.options.length > 0) {
+  while (chatList.childNodes.length > 0) {
     chatList.removeChild(chatList.firstChild);
   }
   chat?.msgs?.forEach((msg) => {
