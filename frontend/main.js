@@ -208,6 +208,12 @@ document
       });
     } else {
       addFriendToGroupSection.style.display = "none";
+      document.getElementById(
+        "add_friend_to_group_section_select_group"
+      ).selectedIndex = 0;
+      document.getElementById(
+        "add_friend_to_group_section_select_friend"
+      ).selectedIndex = 0;
     }
   });
 
@@ -254,6 +260,12 @@ document
       });
     } else {
       removeFriendToGroupSection.style.display = "none";
+      document.getElementById(
+        "remove_friend_to_group_section_select_group"
+      ).selectedIndex = 0;
+      document.getElementById(
+        "remove_friend_to_group_section_select_group"
+      ).selectedIndex = 0;
     }
   });
 
