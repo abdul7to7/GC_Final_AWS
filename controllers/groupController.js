@@ -127,7 +127,7 @@ exports.removeMemberFromGroup = async (req, res, next) => {
     }
     const groupMember = await GroupMembers.findOne({
       where: {
-        userId: req.params.userId,
+        userId: req.user.id,
         groupId: req.params.groupId,
       },
     });
