@@ -270,7 +270,7 @@ document
       while (select_group.childNodes > 1) select_group.removeLastChild();
       userGroups
         .filter((group) => {
-          return group.groupName != "global";
+          return group.groupName != "Global";
         })
         .forEach((group) => {
           const textNode = document.createTextNode(group.groupName);
