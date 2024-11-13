@@ -371,7 +371,7 @@ document
     localStorage.setItem("receiverId", 1);
     localStorage.setItem("receiverName", "global");
     localStorage.setItem("isReceiverGroup", 1);
-    window.location.reload(true);
+    // window.location.reload(true);
   });
 
 document
