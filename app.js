@@ -85,7 +85,7 @@ Friend.belongsTo(User, { foreignKey: "friendId", as: "friendDetails" });
 require("./util/socket")(io);
 
 sequelize
-  // .sync({ force: true })
+  .sync({ force: true })
   // .sync({ alter: true })
   .sync()
   .then(() => {
