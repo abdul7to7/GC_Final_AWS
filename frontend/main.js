@@ -658,7 +658,7 @@ function addPrevChatToUI(chat) {
 
 function addNewMessageToUI({ message, sender, url }) {
   const chatList = document.getElementById("chat_list");
-  while (chatList.options.length >= 15) {
+  while (chatList.childNodes.length >= 15) {
     chatList.removeChild(chatList.firstChild);
   }
   const textNode = document.createTextNode(message);
