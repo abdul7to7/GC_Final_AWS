@@ -159,7 +159,7 @@ document
       deleteGroupSection.style.display = "none";
       const select = document.getElementById("delete_group_section_select");
       while (select.childNodes.length > 1) select.removeChild(select.lastChild);
-      select.selectedIndex = 0;
+      // select.selectedIndex = 0;
     }
   });
 
@@ -218,13 +218,13 @@ document
       );
       while (select_group.childNodes.length > 1)
         select_friend.removeChild(select_friend.lastChild);
-      select_group.selectedIndex = 0;
+      // select_group.selectedIndex = 0;
       const select_friend = document.getElementById(
         "add_friend_to_group_section_select_friend"
       );
       while (select_friend.childNodes.length > 1)
         select_friend.removeChild(select_friend.lastChild);
-      select_friend.selectedIndex = 0;
+      // select_friend.selectedIndex = 0;
     }
   });
 
@@ -278,13 +278,13 @@ document
       );
       while (select_group.childNodes.length > 1)
         select_friend.removeChild(select_friend.lastChild);
-      select_group.selectedIndex = 0;
+      // select_group.selectedIndex = 0;
       const select_friend = document.getElementById(
         "remove_friend_to_group_section_select_friend"
       );
       while (select_friend.childNodes.length > 1)
         select_friend.removeChild(select_friend.lastChild);
-      select_friend.selectedIndex = 0;
+      // select_friend.selectedIndex = 0;
     }
   });
 
@@ -318,7 +318,7 @@ document
       );
       while (select_group.childNodes.length > 1)
         select_group.removeChild(select_group.lastChild);
-      select_group.selectedIndex = 0;
+      // select_group.selectedIndex = 0;
     }
   });
 
