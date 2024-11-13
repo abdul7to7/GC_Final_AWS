@@ -87,7 +87,7 @@ require("./util/socket")(io);
 sequelize
   .sync({ force: true })
   // .sync({ alter: true })
-  .sync()
+  // .sync()
   .then(() => {
     verifyGlobal();
   })
