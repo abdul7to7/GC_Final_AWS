@@ -1,4 +1,4 @@
-const server = `https://gc-final-aws.onrender.com`;
+const server = `https://gc-final-aws-backend.onrender.com`;
 document.getElementById("signupForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   const username = document.getElementById("signupUsername").value;
