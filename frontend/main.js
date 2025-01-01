@@ -1,4 +1,4 @@
-const server = `http://13.233.144.241`;
+const server = `https://gc-final-aws.onrender.com/`;
 const socket = io(server);
 
 let userFriends;

@@ -1,4 +1,4 @@
-const server = "http://13.233.144.241";
+const server = "https://gc-final-aws.onrender.com";
 
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
   e.preventDefault();
