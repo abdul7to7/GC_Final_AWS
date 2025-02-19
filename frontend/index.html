@@ -3,30 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GC | Login</title>
-    <link rel="stylesheet" href="./login.css" />
+    <title>Group Chat</title>
   </head>
+  <link rel="stylesheet" href="./login.css" />
   <body>
-    <form id="loginForm">
-      <input
-        type="text"
-        name="mail"
-        placeholder="Enter mail"
-        id="loginMail"
-        required
-      />
-      <input
-        type="password"
-        name="password"
-        placeholder="Enter Password"
-        id="loginPassword"
-        required
-      />
-      <button>Login</button>
-    </form>
-    <div>
-      <a href="./signup.html">Sign Up</a>
+    <div class="mainContainer">
+      <h2 id="loginHeading">Login</h2>
+      <div class="formContainer">
+        <form class="loginForm" id="loginForm">
+          <div class="loginFormItem flexSpaceBetween">
+            <input
+              type="email"
+              name="mail"
+              id="loginMail"
+              placeholder="Usermail"
+              required
+            />
+          </div>
+          <div class="loginFormItem flexSpaceBetween">
+            <input
+              type="password"
+              name="password"
+              id="loginPassword"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div>
+            <p>Usermail &#8594;demo@com</p>
+            <p>Passowrd &#8594;demo</p>
+          </div>
+
+          <div class="loginFormItem flexCenter">
+            <button class="btn" type="submit" id="loginButton">Login</button>
+          </div>
+        </form>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div>
+        <p>
+          Don't have an account?
+          <a href="./signup.html">Register</a>
+        </p>
+        <a id="forgot-password">Forgot Password</a>
+        <form id="forgot-password-form" style="display: none">
+          <label>Enter email</label>
+          <input type="text" name="mail" id="forgot-password-mail" />
+          <button class="btn" id="send-link-btn">Send Link</button>
+        </form>
+      </div>
     </div>
   </body>
-  <script src="login.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"></script>
+  <script src="./login.js"></script>
 </html>

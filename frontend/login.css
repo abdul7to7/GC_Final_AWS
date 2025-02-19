@@ -2,83 +2,129 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-input {
-    width: 150px;
-    padding: 5px 10px;
-    margin: 2px 0;
-    font-size: 1rem;
-    font-family: inherit;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background-color: #f9f9f9;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    border-color: #4a90e2;
-    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
-    background-color: #fff;
-}
-
-button {
-    padding: 5px 10px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-    font-size: 1rem;
-    font-family: inherit;
-    font-weight: 400;
-    color: #fff;
-    background-color: #4a90e2;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-button:hover {
-    background-color: #357abd;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-button:active {
-    background-color: #2c6091;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-}
-
-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-    box-shadow: none;
+body {
+    background-image: url('./assets/images/olichon.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 a {
     text-decoration: none;
-    color: #007bff;
-    font-weight: 500;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    color: inherit;
+    font-family: inherit;
+    font-weight: bolder;
 }
 
+input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 4px;
+}
 
-a:hover,
-a:focus {
-    color: #0056b3;
-    text-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+input:focus {
+    background-color: transparent;
     outline: none;
+    border-color: grey;
 }
 
 
-a:active {
-    color: #004085;
+
+p {
+    width: 100%;
+    font-size: 14px;
+}
+
+.btn {
+    padding: 5px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.flexSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainContainer {
+    width: 20rem;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.formContainer {
+    height: 7rem;
+    width: 16rem;
+    margin: 20px;
 }
 
 
-a:visited {
-    color: #6c757d;
+.loginForm {}
+
+.loginFormItem {
+    margin: 10px;
+}
+
+#loginButton {
+    width: 100%;
+    height: 30px;
+}
+
+#forgot-password {
+    margin: 20px 0 10px 0;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+}
+
+#send-link-btn {
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+button:disabled {
+    color: black;
+    /* Change text color */
+    background-color: lightgray;
+    /* Set a custom background */
+    opacity: 1;
+    /* Override the default faded look */
+    cursor: not-allowed;
+    /* Keep the cursor style */
+    border: 1px solid black;
+    /* Define a custom border */
+}
+
+#forgot-password:hover {
+    cursor: pointer;
 }

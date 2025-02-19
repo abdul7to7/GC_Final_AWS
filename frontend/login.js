@@ -19,6 +19,9 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 });
 
 async function getAuth(mail, password) {
+  [...document.getElementsByClassName("btn")].forEach((btn) => {
+    btn.setAttribute("disabled", true);
+  });
   try {
     let res = await fetch(`${server}/auth/login`, {
       method: "POST",
@@ -35,4 +38,7 @@ async function getAuth(mail, password) {
   } catch (e) {
     console.log(e);
   }
+  [...document.getElementsByClassName("btn")].forEach((btn) => {
+    btn.removeAttribute("disabled");
+  });
 }
