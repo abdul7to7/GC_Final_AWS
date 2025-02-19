@@ -159,3 +159,11 @@ button:disabled {
     bottom: 20px;
     left: 20px;
 }
+
+.friends_list_item:hover {
+    cursor: pointer;
+}
+
+.group_item:hover {
+    cursor: pointer;
+}

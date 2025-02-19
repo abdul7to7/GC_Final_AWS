@@ -27,6 +27,9 @@ document.getElementById("signUpForm")?.addEventListener("submit", async (e) => {
       return response.json();
     })
     .then((response) => {
+      [...document.getElementsByClassName("btn")].forEach((btn) => {
+        btn.removeAttribute("disabled");
+      });
       if (!response.suceess) {
         window.location.reload();
         //send msg here
@@ -44,8 +47,4 @@ document.getElementById("signUpForm")?.addEventListener("submit", async (e) => {
     .catch((e) => {
       alert(e);
     });
-
-  [...document.getElementsByClassName("btn")].forEach((btn) => {
-    btn.removeAttribute("disabled");
-  });
 });
