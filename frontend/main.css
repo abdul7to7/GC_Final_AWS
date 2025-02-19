@@ -149,3 +149,13 @@ button:disabled {
 #input_message_file {
     font-size: 0.8rem;
 }
+
+#rightSection {
+    position: relative;
+}
+
+#logoutBtn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
