@@ -32,6 +32,7 @@ document.getElementById("signUpForm")?.addEventListener("submit", async (e) => {
         //send msg here
         return;
       }
+      alert("register successful");
       localStorage.setItem("userId", data.userId);
       localStorage.setItem("username", data.username);
       localStorage.setItem("token", data.token);
