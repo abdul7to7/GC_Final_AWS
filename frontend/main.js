@@ -675,7 +675,7 @@ function addNewMessageToUI({ message, sender, url }) {
   while (chatList.childNodes.length >= 15) {
     chatList.removeChild(chatList.firstChild);
   }
-  const textNode = document.createTextNode(message);
+  const textNode = document.createTextNode(message + " --> " + sender);
   const li = document.createElement("li");
   if (url) {
     const a = document.createElement("a");
